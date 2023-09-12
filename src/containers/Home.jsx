@@ -2,12 +2,114 @@ import Carousel from "../components/Carousel";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
 const Home = () => {
+  const [bookCat, setBookCat] = useState([]);
+  const [bookItem, setBookItem] = useState([]);
+  const [catFilter, setCatFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const loadData = async () => {
+    let response = await fetch("http://localhost:5000/api/bookData", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    response = await response.json();
+    // console.log(response[0], response[1]);
+    setBookItem(response[0]);
+    setBookCat(response[1]);
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const hendelCatagory = (e) => {
+    setCatFilter(e.target.value);
+  };
+
   return (
     <>
       <Navbar />
       <Carousel />
-      <Card />
+
+      <div className="container">
+        {bookCat !== [] ? (
+          <div className="d-flex ">
+            <select
+              name="catSelecter"
+              id="select1"
+              className=" rounded"
+              onChange={hendelCatagory}
+            >
+              {bookCat.map((data) => (
+                <option key={data._id}>{data.category}</option>
+              ))}
+            </select>
+            <div className="input-group rounded ps-5 ">
+              <input
+                type="search"
+                className=" rounded "
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              />
+              <span className="input-group-text border-0" id="search-addon">
+                <i className="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        <hr />
+        <h4>{catFilter}</h4>
+        <hr />
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 ">
+          {bookItem !== []
+            ? catFilter === "all"
+              ? bookItem
+                  .filter((item) =>
+                    item.book_name.toLowerCase().includes(search)
+                  )
+                  .map((filterItem) => (
+                    <div key={filterItem._id}>
+                      <Card
+                        bookImage={filterItem.book_image}
+                        bookName={filterItem.book_name}
+                        authorName={filterItem.author_name}
+                        Categoty={filterItem.category}
+                        Price={filterItem.price}
+                        Description={filterItem.description}
+                      ></Card>
+                    </div>
+                  ))
+              : bookItem
+                  .filter(
+                    (item) =>
+                      item.category === catFilter &&
+                      item.book_name.toLowerCase().includes(search)
+                  )
+                  .map((filterItem) => (
+                    <div key={filterItem._id}>
+                      <Card
+                        bookImage={filterItem.book_image}
+                        bookName={filterItem.book_name}
+                        authorName={filterItem.author_name}
+                        Categoty={filterItem.category}
+                        Price={filterItem.price}
+                        Description={filterItem.discription}
+                      ></Card>
+                    </div>
+                  ))
+            : ""}
+        </div>
+      </div>
+
       <Footer />
     </>
   );

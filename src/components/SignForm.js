@@ -97,7 +97,7 @@ const SignForm = () => {
           Sign in
         </button>
         {/* <button className="w-40 btn  btn-primary"> */}
-        <Link to="/Login" className=" btn  btn-danger">
+        <Link to="/Login" className=" btn  btn-danger ms-3">
           Login
         </Link>
         {/* </button> */}

@@ -76,7 +76,7 @@ const LogForm = () => {
           login
         </button>
         {/* <button className="w-40 btn  btn-primary"> */}
-        <Link to="/SignUp" className=" btn  btn-danger">
+        <Link to="/SignUp" className=" btn  btn-danger ms-3">
           sign in
         </Link>
         {/* </button> */}
