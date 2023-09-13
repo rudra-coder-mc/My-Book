@@ -16,6 +16,7 @@ app.use(express.json());
 app.use("/api/", require("./Routers/SignupUser"));
 app.use("/api/", require("./Routers/LoginUser"));
 app.use("/api/", require("./Routers/DisplatData"));
+app.use("/api/", require("./Routers/OrderData"));
 app.get("/", (req, res) => {
   res.send("Hello World ---");
 });

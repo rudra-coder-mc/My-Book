@@ -1,6 +1,17 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { useCart } from "./ContextReducer";
 import logo from "../image/logo1.png";
+import { useState } from "react";
+import Modal from "../Modal";
+import Cart from "../containers/Cart";
 const Navbar = () => {
+  let data = useCart();
+  const [cartView, setCartView] = useState(false);
+  const navigate = useNavigate();
+  const handelLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/Login");
+  };
   return (
     <>
       {/* <!-- Navbar --> */}
@@ -34,123 +45,64 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
+              {localStorage.getItem("authToken") ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/MyOrder">
+                    My Order
+                  </Link>
+                </li>
+              ) : (
+                " "
+              )}
+
               <li className="nav-item">
                 <Link className="nav-link" to="/About">
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Login">
+            </ul>
+            {!localStorage.getItem("authToken") ? (
+              <>
+                <Link className="btn btn-white  mx-1" to="/Login">
                   Login
                 </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/SignUp">
+
+                <Link className="btn btn-white  mx-1" to="/SignUp">
                   SignUp
                 </Link>
-              </li>
-            </ul>
+              </>
+            ) : (
+              <div className="d-flex align-items-center">
+                <Link
+                  className="text-reset me-3"
+                  to="/"
+                  onClick={() => setCartView(true)}
+                >
+                  <i className="fas fa-shopping-cart">
+                    {" "}
+                    <span class="badge rounded-pill badge-notification text-danger">
+                      {data.length}
+                    </span>
+                  </i>
+                </Link>
+                {cartView ? (
+                  <Modal onClose={() => setCartView(false)}>
+                    <Cart />
+                  </Modal>
+                ) : (
+                  ""
+                )}
+                <Link
+                  className="btn btn-white  mx-1"
+                  to="/"
+                  onClick={handelLogout}
+                >
+                  Logout
+                </Link>
+              </div>
+            )}
             {/* <!-- Left links --> */}
           </div>
-          {/* <!-- Collapsible wrapper --> */}
-
-          {/* <!-- Right elements --> */}
-          <div className="d-flex align-items-center">
-            {/* <!-- Icon --> */}
-            <Link className="text-reset me-3" to="/">
-              <i className="fas fa-shopping-cart"></i>
-            </Link>
-
-            {/* <!-- Notifications --> */}
-            <div className="dropdown">
-              <Link
-                className="text-reset me-3 dropdown-toggle hidden-arrow"
-                to="/"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="fas fa-bell"></i>
-                <span className="badge rounded-pill badge-notification bg-danger">
-                  {/* Notifications code alert  here */}
-                </span>
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Some news
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Another news
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Something else here
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            {/* <!-- Avatar --> */}
-            <div className="dropdown">
-              <Link
-                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                to="/"
-                id="navbarDropdownMenuAvatar"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  // Profile src link here
-                  src={logo}
-                  className="rounded-circle"
-                  height="25"
-                  alt="Black and White Portrait of a Man"
-                  loading="lazy"
-                />
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuAvatar"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    My profile
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Settings
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Logout
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            {/* <form class="d-flex input-group w-auto mx-2">
-              <input
-                type="search"
-                class="form-control rounded"
-                placeholder="Search"
-                aria-label="Search"
-                aria-describedby="search-addon"
-              />
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-              </span>
-            </form> */}
-          </div>
-          {/* <!-- Right elements --> */}
         </div>
         {/* <!-- Container wrapper --> */}
       </nav>

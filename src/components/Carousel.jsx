@@ -1,3 +1,14 @@
+const img1 = require("../image/A-book-photo-with-title-of-MyBooks (1).png");
+const img2 = require("../image/A-book-photo-with-title-of-MyBooks.png");
+const img3 = require("../image/A-library-image (1).png");
+const img4 = require("../image/A-library-image (2).png");
+const img5 = require("../image/A-library-image (3).png");
+const img6 = require("../image/A-library-image (4).png");
+const img7 = require("../image/A-library-image (5).png");
+const img8 = require("../image/A-library-image.png");
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
+
 const Carousel = () => {
   return (
     <div className="container-fulid m-4">
@@ -29,6 +40,36 @@ const Carousel = () => {
             data-mdb-slide-to="2"
             aria-label="Slide 3"
           ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide-to="5"
+            aria-label="Slide 6"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide-to="6"
+            aria-label="Slide 7"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide-to="7"
+            aria-label="Slide 8"
+          ></button>
         </div>
 
         {/* <!-- Inner --> */}
@@ -36,42 +77,89 @@ const Carousel = () => {
           {/* <!-- Single item --> */}
           <div className="carousel-item active">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp"
-              className="d-block w-100"
+              src={img1}
+              className="d-block w-100 "
               alt="Sunset Over the City"
+              width="640"
+              height="460"
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
           </div>
 
           {/* <!-- Single item --> */}
           <div className="carousel-item">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
+              src={img2}
               className="d-block w-100"
               alt="Canyon at Nigh"
+              width="640"
+              height="460"
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
           </div>
 
           {/* <!-- Single item --> */}
           <div className="carousel-item">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
+              src={img3}
               className="d-block w-100"
               alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </div>
+          </div>
+
+          {/* <!-- Single item --> */}
+          <div className="carousel-item">
+            <img
+              src={img4}
+              className="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
+            />
+          </div>
+
+          {/* <!-- Single item --> */}
+          <div className="carousel-item">
+            <img
+              src={img5}
+              className="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
+            />
+          </div>
+
+          {/* <!-- Single item --> */}
+          <div className="carousel-item">
+            <img
+              src={img6}
+              className="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
+            />
+          </div>
+
+          {/* <!-- Single item --> */}
+          <div className="carousel-item">
+            <img
+              src={img7}
+              className="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
+            />
+          </div>
+
+          {/* <!-- Single item --> */}
+          <div className="carousel-item">
+            <img
+              src={img8}
+              className="d-block w-100"
+              alt="Cliff Above a Stormy Sea"
+              width="640"
+              height="460"
+            />
           </div>
         </div>
         {/* <!-- Inner --> */}

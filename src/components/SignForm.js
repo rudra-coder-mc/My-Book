@@ -1,7 +1,8 @@
 import logo from "../image/logo1.png";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 const SignForm = () => {
+  let navigate = useNavigate();
   const [userDetail, setuserDetail] = useState({
     name: "",
     email: "",
@@ -28,6 +29,10 @@ const SignForm = () => {
 
     if (!json.success) {
       alert("enter valid detail");
+    }
+
+    if (json.success) {
+      navigate("/login");
     }
   };
   const chang = (event) => {

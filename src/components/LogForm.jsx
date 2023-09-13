@@ -21,13 +21,14 @@ const LogForm = () => {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
 
     if (!json.success) {
       alert("enter valid detail");
     }
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
+      localStorage.setItem("userEmail", userDetail.email);
       // console.log(localStorage.getItem("authToken"));
       navigate("/");
     }

@@ -1,4 +1,4 @@
-import Carousel from "../components/Carousel";
+import Carousele from "../components/Carousel";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Carousel />
+      <Carousele />
 
       <div className="container">
         {bookCat !== [] ? (
@@ -58,7 +58,10 @@ const Home = () => {
                   setSearch(e.target.value);
                 }}
               />
-              <span className="input-group-text border-0" id="search-addon">
+              <span
+                className="input-group-text border-0 rounded"
+                id="search-addon"
+              >
                 <i className="fas fa-search"></i>
               </span>
             </div>
@@ -69,23 +72,16 @@ const Home = () => {
         <hr />
         <h4>{catFilter}</h4>
         <hr />
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 ">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-4 ">
           {bookItem !== []
             ? catFilter === "all"
               ? bookItem
                   .filter((item) =>
                     item.book_name.toLowerCase().includes(search)
                   )
-                  .map((filterItem) => (
-                    <div key={filterItem._id}>
-                      <Card
-                        bookImage={filterItem.book_image}
-                        bookName={filterItem.book_name}
-                        authorName={filterItem.author_name}
-                        Categoty={filterItem.category}
-                        Price={filterItem.price}
-                        Description={filterItem.description}
-                      ></Card>
+                  .map((filterItems) => (
+                    <div key={filterItems._id}>
+                      <Card bookItems={filterItems}></Card>
                     </div>
                   ))
               : bookItem
@@ -94,16 +90,9 @@ const Home = () => {
                       item.category === catFilter &&
                       item.book_name.toLowerCase().includes(search)
                   )
-                  .map((filterItem) => (
-                    <div key={filterItem._id}>
-                      <Card
-                        bookImage={filterItem.book_image}
-                        bookName={filterItem.book_name}
-                        authorName={filterItem.author_name}
-                        Categoty={filterItem.category}
-                        Price={filterItem.price}
-                        Description={filterItem.discription}
-                      ></Card>
+                  .map((filterItems) => (
+                    <div key={filterItems._id}>
+                      <Card bookItems={filterItems}></Card>
                     </div>
                   ))
             : ""}
