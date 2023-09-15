@@ -15,7 +15,8 @@ const mongoDB = async () => {
     .catch((err) => {
       console.log(err);
     });
-  
+
+ 
 };
 
 module.exports = mongoDB();

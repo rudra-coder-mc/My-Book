@@ -7,7 +7,6 @@ const SignForm = () => {
     name: "",
     email: "",
     password: "",
-    location: "",
   });
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -21,11 +20,10 @@ const SignForm = () => {
         name: userDetail.name,
         email: userDetail.email,
         password: userDetail.password,
-        location: userDetail.location,
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
 
     if (!json.success) {
       alert("enter valid detail");
@@ -73,7 +71,7 @@ const SignForm = () => {
           />
           <label htmlFor="floatingInput">Email address</label>
         </div>
-        <div className="form-floating mt-4">
+        <div className="form-floating my-4">
           <input
             type="password"
             className="form-control"
@@ -84,18 +82,6 @@ const SignForm = () => {
             onChange={chang}
           />
           <label htmlFor="floatingPassword">Password</label>
-        </div>
-        <div className="form-floating my-4">
-          <input
-            type="text"
-            className="form-control"
-            id="LocationInput"
-            placeholder="name@example.com"
-            name="location"
-            value={userDetail.location}
-            onChange={chang}
-          />
-          <label htmlFor="LocationInput"> address</label>
         </div>
 
         <button className=" btn btn-success " type="submit">

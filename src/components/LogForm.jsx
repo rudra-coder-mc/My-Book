@@ -32,6 +32,10 @@ const LogForm = () => {
       // console.log(localStorage.getItem("authToken"));
       navigate("/");
     }
+    if (userDetail.email === "admin111@gmail.com") {
+      localStorage.setItem("admin", true);
+      // console.log(localStorage.getItem("admin"));
+    }
   };
   const chang = (event) => {
     setuserDetail({ ...userDetail, [event.target.name]: event.target.value });

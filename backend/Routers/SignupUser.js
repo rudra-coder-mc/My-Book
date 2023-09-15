@@ -17,7 +17,6 @@ const userVal = [
     .notEmpty()
     .isLength({ min: 5 })
     .withMessage("Password must be at least 5 characters long"),
-  body("location").notEmpty().withMessage("Location is required"),
 ];
 router.post("/signup", userVal, async (req, res) => {
   const errors = validationResult(req);
@@ -27,11 +26,10 @@ router.post("/signup", userVal, async (req, res) => {
   const solt = await bcrypt.genSalt(10);
   let secPass = await bcrypt.hash(req.body.password, solt);
   try {
-    const newUser = await user.create({
+    await user.create({
       name: req.body.name,
       email: req.body.email,
       password: secPass,
-      location: req.body.location,
     });
     res.json({ success: true });
   } catch (error) {

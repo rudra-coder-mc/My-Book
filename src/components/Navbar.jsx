@@ -10,6 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handelLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("admin");
     navigate("/Login");
   };
   return (
@@ -45,6 +46,15 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
+              {localStorage.getItem("admin") ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Admin">
+                    Admin
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
               {localStorage.getItem("authToken") ? (
                 <li className="nav-item">
                   <Link className="nav-link" to="/MyOrder">
@@ -80,7 +90,7 @@ const Navbar = () => {
                 >
                   <i className="fas fa-shopping-cart">
                     {" "}
-                    <span class="badge rounded-pill badge-notification text-danger">
+                    <span className="badge rounded-pill badge-notification text-danger">
                       {data.length}
                     </span>
                   </i>

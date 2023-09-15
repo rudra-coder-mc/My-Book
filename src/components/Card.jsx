@@ -9,53 +9,57 @@ const Card = (props) => {
   let navigate = useNavigate();
 
   const handelOrder = async () => {
-    let book = [];
-    for (const item of data) {
-      if (item.id === bookItem._id) {
-        book = item;
-        break;
+    if (!localStorage.getItem("authToken")) {
+      navigate("/login");
+    } else {
+      let book = [];
+      for (const item of data) {
+        if (item.id === bookItem._id) {
+          book = item;
+          break;
+        }
       }
-    }
-    console.log(book);
-    console.log(new Date());
-  
-    if (book !== []) {
-      if (book.Quantity === orderCount) {
-        await dispatch({
-          type: "UPDATE",
-          id: bookItem._id,
-          price: totalPrice,
-          Quantity: orderCount,
-        });
-        return;
-      } else if (book.Quantity !== orderCount) {
-        await dispatch({
-          type: "ADD",
-          id: bookItem._id,
-          book_name: bookItem.book_name,
-          book_image: bookItem.book_image,
-          author_name: bookItem.author_name,
-          price: totalPrice,
-          Quantity: orderCount,
-          category: bookItem.category,
-        });
-        console.log("Quantity different so simply ADD one more to the list");
+      // console.log(book);
+      // console.log(new Date());
+
+      if (book !== []) {
+        if (book.Quantity === orderCount) {
+          await dispatch({
+            type: "UPDATE",
+            id: bookItem._id,
+            price: totalPrice,
+            Quantity: orderCount,
+          });
+          return;
+        } else if (book.Quantity !== orderCount) {
+          await dispatch({
+            type: "ADD",
+            id: bookItem._id,
+            book_name: bookItem.book_name,
+            book_image: bookItem.book_image,
+            author_name: bookItem.author_name,
+            price: totalPrice,
+            Quantity: orderCount,
+            category: bookItem.category,
+          });
+          console.log("Quantity different so simply ADD one more to the list");
+          return;
+        }
         return;
       }
-      return;
+      await dispatch({
+        type: "ADD",
+        id: bookItem._id,
+        book_image: bookItem.book_image,
+        book_name: bookItem.book_name,
+        author_name: bookItem.author_name,
+        price: totalPrice,
+        Quantity: orderCount,
+        category: bookItem.category,
+      });
+      // console.log(data);
+      // setOrderCount(1);
     }
-    await dispatch({
-      type: "ADD",
-      id: bookItem._id,
-      book_image: bookItem.book_image,
-      book_name: bookItem.book_name,
-      author_name: bookItem.author_name,
-      price: totalPrice,
-      Quantity: orderCount,
-      category: bookItem.category,
-    });
-    console.log(data);
-    // setOrderCount(1);
   };
 
   const handleClick = (e) => {

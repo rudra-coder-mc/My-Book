@@ -12,11 +12,14 @@ app.use((req, res, next) => {
   );
   next();
 });
+
 app.use(express.json());
 app.use("/api/", require("./Routers/SignupUser"));
 app.use("/api/", require("./Routers/LoginUser"));
 app.use("/api/", require("./Routers/DisplatData"));
 app.use("/api/", require("./Routers/OrderData"));
+app.use("/api/", require("./Routers/Admin"));
+
 app.get("/", (req, res) => {
   res.send("Hello World ---");
 });

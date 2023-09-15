@@ -2,6 +2,7 @@ import Carousele from "../components/Carousel";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 import { useEffect, useState } from "react";
 const Home = () => {
   const [bookCat, setBookCat] = useState([]);
@@ -9,19 +10,20 @@ const Home = () => {
   const [catFilter, setCatFilter] = useState("all");
   const [search, setSearch] = useState("");
   const loadData = async () => {
-    let response = await fetch("http://localhost:5000/api/bookData", {
-      method: "Post",
+    var response = await fetch("http://localhost:5000/api/bookData", {
+      method: "get",
       headers: {
         "Content-Type": "application/json",
       },
     });
     response = await response.json();
-    // console.log(response[0], response[1]);
+    console.log(response[0]);
     setBookItem(response[0]);
     setBookCat(response[1]);
   };
   useEffect(() => {
     loadData();
+    console.log("data");
   }, []);
 
   const hendelCatagory = (e) => {

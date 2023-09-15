@@ -5,11 +5,11 @@ const Order = require("../models/order");
 router.post("/orderData", async (req, res) => {
   let data = req.body.order_data;
   await data.splice(0, 0, { Order_date: req.body.order_date });
-  console.log("1231242343242354", req.body.email);
+  // console.log("1231242343242354", req.body.email);
 
   //if email not exisitng in db then create: else: InsertMany()
   let eId = await Order.findOne({ email: req.body.email });
-  console.log(eId);
+  // console.log(eId);
   if (eId === null) {
     try {
       //   console.log(data);
