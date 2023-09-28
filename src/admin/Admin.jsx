@@ -70,21 +70,35 @@ const Admin = () => {
   const hendelUpdate = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/", {
+    const response = await fetch("http://localhost:5000/api/UpdateBook", {
       method: "Post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // email: userDetail.email,
-        // password: userDetail.password,
+        book_image: bookDetail.book_image,
+        book_name: bookDetail.book_name,
+        author_name: bookDetail.author_name,
+        category: selectedCat,
+        price: bookDetail.price,
+        description: bookDetail.description,
       }),
     });
     const json = await response.json();
     // console.log(json);
 
-    if (!json.success) {
+    if (!json.UpdateBook) {
       alert("enter valid detail");
+    }
+    if (json.UpdateBook) {
+      setBookDetail({
+        book_image: "",
+        book_name: "",
+        author_name: "",
+        category: "",
+        price: "",
+        description: "",
+      });
     }
   };
   const hendelDelete = async (e) => {
@@ -225,9 +239,9 @@ const Admin = () => {
             <button className="btn btn-success mx-3 " onClick={hendelAdd}>
               Add BOOk
             </button>
-            {/* <button className="btn btn-success mx-3" onClick={hendelUpdate}>
+            <button className="btn btn-success mx-3" onClick={hendelUpdate}>
               Update BOOk
-            </button> */}
+            </button>
             <button className="btn btn-success" onClick={hendelDelete}>
               Delete BOOk
             </button>

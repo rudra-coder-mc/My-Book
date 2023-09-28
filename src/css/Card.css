@@ -1,0 +1,42 @@
+.card > *:not(:first-child) {
+  margin-block-start: var(--size-5);
+}
+
+.card-title-book {
+  font-size: 10;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-description {
+  --max-lines: 3;
+  --line-height: 1.5;
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  overflow: hidden;
+  position: relative;
+}
+
+.exp-btn {
+  appearance: none;
+  border: 1px solid blue;
+  padding: 0.2em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-bottom: 0.35em;
+}
+
+.exp-btn:hover {
+  background-color: #ccc;
+}
+.exp-btn::before {
+  content: "Expand";
+}
+.exp-btn:checked::before {
+  content: "Collapse";
+}
+
+.text-description:has(+ .exp-btn:checked) {
+  max-height: none;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatchCart, useCart } from "./ContextReducer";
 import { useNavigate } from "react-router-dom";
+import "../css/Card.css";
 const Card = (props) => {
   const [orderCount, setOrderCount] = useState(1);
   let bookItem = props.bookItems;
@@ -86,14 +87,14 @@ const Card = (props) => {
           style={{ height: "320px", objectFit: "fill" }}
         />
         <div className="card-body">
-          <h5 className="card-title">{bookItem.book_name}</h5>
+          <h5 className="card-title-book">{bookItem.book_name}</h5>
           <h6 className="font-weight-bold">
             Author name: {bookItem.author_name}
           </h6>
           <h6 className="font-weight-bold">Categoty: {bookItem.category}</h6>
           <h6 className="font-weight-bold">price: {totalPrice}</h6>
-          <p className="card-text ">{bookItem.description}</p>
-
+          <p className="card-text text-description">{bookItem.description}</p>
+          <input type="checkbox" className="exp-btn" />
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
               <button
