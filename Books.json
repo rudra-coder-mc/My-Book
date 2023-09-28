@@ -1,0 +1,346 @@
+[
+  {
+    "book_image": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781471173936/the-great-gatsby-9781471173936_hr.jpg",
+    "book_name": "The Great Gatsby",
+    "author_name": "F. Scott Fitzgerald",
+    "category": "Classic Literature",
+    "price": "12.99",
+    "description": "The Great Gatsby is a novel by F. Scott Fitzgerald that tells the story of Jay Gatsby's unrequited love for Daisy Buchanan during the Roaring Twenties."
+  },
+  {
+    "book_image": "https://rukminim1.flixcart.com/image/1408/1408/book/4/8/2/to-kill-a-mockingbird-original-imadzpemqkpyamex.jpeg?q=90",
+    "book_name": "To Kill a Mockingbird",
+    "author_name": "Harper Lee",
+    "category": "Fiction",
+    "price": "10.49",
+    "description": "To Kill a Mockingbird is a classic novel by Harper Lee that addresses themes of racism and injustice in the American South."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP._AWQua901tukexSsdbr6IgAAAA?pid=ImgDet&rs=1",
+    "book_name": "The Hobbit",
+    "author_name": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": "15.99",
+    "description": "The Hobbit is a fantasy novel by J.R.R. Tolkien that follows the adventures of Bilbo Baggins as he embarks on a journey with a group of dwarves to reclaim their homeland from a dragon."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.odPGcm6kI3r0ZNgOphD0XwHaLH?pid=ImgDet&rs=1",
+    "book_name": "Pride and Prejudice",
+    "author_name": "Jane Austen",
+    "category": "Classic Literature",
+    "price": "9.99",
+    "description": "Pride and Prejudice is a novel by Jane Austen that explores themes of love, class, and social expectations in 19th-century England."
+  },
+  {
+    "book_image": "https://d30a6s96kk7rhm.cloudfront.net/original/readings/978/014/103/9780141036144.jpg",
+    "book_name": "1984",
+    "author_name": "George Orwell",
+    "category": "Dystopian Fiction",
+    "price": "11.99",
+    "description": "1984 is a dystopian novel by George Orwell that depicts a totalitarian society ruled by Big Brother and explores the consequences of totalitarianism on individual freedom."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.h0iJZbuWxSjYiIZrHxt1-wHaLZ?pid=ImgDet&rs=1",
+    "book_name": "The Catcher in the Rye",
+    "author_name": "J.D. Salinger",
+    "category": "Fiction",
+    "price": "8.99",
+    "description": "The Catcher in the Rye is a novel by J.D. Salinger that follows the experiences of Holden Caulfield, a disenchanted teenager in New York City."
+  },
+  {
+    "book_image": "https://m.media-amazon.com/images/I/51eVNlqfveL.jpg",
+    "book_name": "The Lord of the Rings",
+    "author_name": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": "19.99",
+    "description": "The Lord of the Rings is an epic fantasy trilogy by J.R.R. Tolkien that follows the quest to destroy the One Ring and defeat the Dark Lord Sauron."
+  },
+  {
+    "book_image": "https://m.media-amazon.com/images/I/51bDuU2p5zL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    "book_name": "The Alchemist",
+    "author_name": "Paulo Coelho",
+    "category": "Fiction",
+    "price": "14.99",
+    "description": "The Alchemist is a novel by Paulo Coelho that tells the story of Santiago, a shepherd boy, on a journey to discover his personal legend and fulfill his dreams."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.dyD3G28ri4z-aBURZTycRQHaLS?pid=ImgDet&rs=1",
+    "book_name": "Moby-Dick",
+    "author_name": "Herman Melville",
+    "category": "Adventure",
+    "price": "13.49",
+    "description": "Moby-Dick is a novel by Herman Melville that follows Captain Ahab's relentless pursuit of the white whale, Moby Dick, and explores themes of obsession and fate."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.7nFMXy98ovBtIj07pJq9DQHaK-?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Hunger Games",
+    "author_name": "Suzanne Collins",
+    "category": "Young Adult",
+    "price": "9.99",
+    "description": "The Hunger Games is a dystopian novel by Suzanne Collins that depicts a future society where teenagers are forced to participate in a deadly televised competition."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.IPXINf2CcYViEbVx_JRJVAAAAA?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road",
+    "author_name": "Cormac McCarthy",
+    "category": "Post-Apocalyptic",
+    "price": "12.99",
+    "description": "The Road is a post-apocalyptic novel by Cormac McCarthy that follows a father and son as they journey through a desolate landscape in search of safety and survival."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.-78idbaVGFNtm_BzKIyI9wHaKb?w=128&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "Harry Potter and the Sorcerer's Stone",
+    "author_name": "J.K. Rowling",
+    "category": "Fantasy",
+    "price": "14.99",
+    "description": "Harry Potter and the Sorcerer's Stone is the first book in the Harry Potter series by J.K. Rowling, introducing readers to the magical world of Hogwarts."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.RzIrTehEQ_Ofifvfb0DSAAHaLH?w=120&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Shining",
+    "author_name": "Stephen King",
+    "category": "Horror",
+    "price": "11.49",
+    "description": "The Shining is a horror novel by Stephen King that tells the story of the Torrance family as they endure the supernatural horrors of the Overlook Hotel."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.TFcHdqC2Obn1q8-kAt1zTwHaLY?w=120&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "Brave New World",
+    "author_name": "Aldous Huxley",
+    "category": "Dystopian Fiction",
+    "price": "10.99",
+    "description": "Brave New World is a dystopian novel by Aldous Huxley that envisions a futuristic society where happiness and conformity are prioritized over individuality."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.9Ax9nJbE2bYt3zeSSY94VgHaKE?w=208&h=283&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Da Vinci Code",
+    "author_name": "Dan Brown",
+    "category": "Mystery",
+    "price": "13.99",
+    "description": "The Da Vinci Code is a mystery thriller by Dan Brown that follows Robert Langdon as he unravels a series of cryptic codes and symbols in search of a hidden secret."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.bADjWwLtxW0p3BDVYa9E_AHaKC?w=117&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Girl with the Dragon Tattoo",
+    "author_name": "Stieg Larsson",
+    "category": "Mystery",
+    "price": "12.49",
+    "description": "The Girl with the Dragon Tattoo is a mystery novel by Stieg Larsson that follows journalist Mikael Blomkvist and hacker Lisbeth Salander as they investigate a decades-old disappearance."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OSK.99845a04301cc31f5d9eb7aff6d21fcc?w=119&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "Gone with the Wind",
+    "author_name": "Margaret Mitchell",
+    "category": "Historical Fiction",
+    "price": "11.99",
+    "description": "Gone with the Wind is a historical fiction novel by Margaret Mitchell set during the American Civil War, focusing on the life of Scarlett O'Hara."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.GPmCKHcaghiCjmUY5inw5QAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road Not Taken: Finding America in the Poem Everyone Loves and Almost Everyone Gets Wrong",
+    "author_name": "David Orr",
+    "category": "Literary Criticism",
+    "price": "16.99",
+    "description": "A critical exploration of Robert Frost's famous poem 'The Road Not Taken' by David Orr, examining its deeper meanings and cultural significance."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.rvHai6279CiX-7HrqBzx9gHaLX?w=201&h=309&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Silent Patient",
+    "author_name": "Alex Michaelides",
+    "category": "Psychological Thriller",
+    "price": "14.49",
+    "description": "The Silent Patient is a psychological thriller by Alex Michaelides that follows Alicia Berenson, a woman who shoots her husband and never speaks again, until a psychotherapist tries to uncover the truth."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.dyJVnY28ExPMx4EpUQgZIgHaLR?w=202&h=308&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Sun Also Rises",
+    "author_name": "Ernest Hemingway",
+    "category": "Modernist Literature",
+    "price": "10.99",
+    "description": "The Sun Also Rises is a novel by Ernest Hemingway that portrays the lives of the 'Lost Generation' in the aftermath of World War I."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.ETB-wTJYisS7uG1GVRkNkgHaMB?w=196&h=318&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Name of the Wind",
+    "author_name": "Patrick Rothfuss",
+    "category": "Fantasy",
+    "price": "13.99",
+    "description": "The Name of the Wind is a fantasy novel by Patrick Rothfuss that recounts the life of Kvothe, a gifted young musician and magician."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.EIus5OInuNwjNLdBKA-lTgHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Martian",
+    "author_name": "Andy Weir",
+    "category": "Science Fiction",
+    "price": "12.99",
+    "description": "The Martian is a science fiction novel by Andy Weir that follows astronaut Mark Watney's struggle for survival after being stranded on Mars."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.Bot9b5KthqRuI80alqWmBgHaLb?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Handmaid's Tale",
+    "author_name": "Margaret Atwood",
+    "category": "Dystopian Fiction",
+    "price": "11.49",
+    "description": "The Handmaid's Tale is a dystopian novel by Margaret Atwood that explores a theocratic regime where women are subjected to oppression and control."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.h0iJZbuWxSjYiIZrHxt1-wHaLZ?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Catcher in the Rye",
+    "author_name": "J.D. Salinger",
+    "category": "Fiction",
+    "price": "8.99",
+    "description": "The Catcher in the Rye is a novel by J.D. Salinger that follows the experiences of Holden Caulfield, a disenchanted teenager in New York City."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.uv0KecmqbXQKZQ-wsDYpXgHaLU?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Night Circus",
+    "author_name": "Erin Morgenstern",
+    "category": "Fantasy",
+    "price": "14.99",
+    "description": "The Night Circus is a fantasy novel by Erin Morgenstern that tells the story of a magical competition between two young illusionists."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.NfwikBKIGip-BkCQ5TDHagHaLH?w=119&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Goldfinch",
+    "author_name": "Donna Tartt",
+    "category": "Mystery",
+    "price": "15.49",
+    "description": "The Goldfinch is a mystery novel by Donna Tartt that follows Theo Decker as he becomes involved with a stolen painting, leading to a life of deception and intrigue."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.SsBAQbDqGOH-pjZ8rUq-UwHaFj?w=245&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Book Thief",
+    "author_name": "Markus Zusak",
+    "category": "Historical Fiction",
+    "price": "11.99",
+    "description": "The Book Thief is a historical fiction novel by Markus Zusak narrated by Death, focusing on a young girl named Liesel Meminger in Nazi Germany."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.7NP-bRIALbyFS377qzR5_gHaLj?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Girl on the Train",
+    "author_name": "Paula Hawkins",
+    "category": "Mystery",
+    "price": "10.99",
+    "description": "The Girl on the Train is a mystery thriller by Paula Hawkins that follows the intertwined lives of three women and a shocking disappearance."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.SWTNCJO-e6VnneyKZqMvKgHaLK?w=203&h=306&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Odyssey",
+    "author_name": "Homer",
+    "category": "Epic Poetry",
+    "price": "9.99",
+    "description": "The Odyssey is an ancient Greek epic poem attributed to Homer, recounting the adventures of Odysseus as he tries to return home after the Trojan War."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.C8Wgq5F-zSEjVXJnyds03gHaLf?w=200&h=311&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road Less Traveled: A New Psychology of Love, Traditional Values, and Spiritual Growth",
+    "author_name": "M. Scott Peck",
+    "category": "Psychology",
+    "price": "12.99",
+    "description": "The Road Less Traveled by M. Scott Peck explores the importance of discipline, love, and spirituality in achieving personal growth and fulfillment."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.IZGzNF4HdLF40ngKzPszwgHaK0?w=122&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Fellowship of the Ring",
+    "author_name": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": "13.99",
+    "description": "The Fellowship of the Ring is the first book in J.R.R. Tolkien's epic fantasy trilogy, The Lord of the Rings, following the journey to destroy the One Ring."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.IPXINf2CcYViEbVx_JRJVAAAAA?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road",
+    "author_name": "Cormac McCarthy",
+    "category": "Post-Apocalyptic",
+    "price": "12.99",
+    "description": "The Road is a post-apocalyptic novel by Cormac McCarthy that follows a father and son as they journey through a desolate landscape in search of safety and survival."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.Xs2Pi1eWk4YUBU8GJsn5AgHaEK?w=291&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "Harry Potter and the Prisoner of Azkaban",
+    "author_name": "J.K. Rowling",
+    "category": "Fantasy",
+    "price": "14.99",
+    "description": "Harry Potter and the Prisoner of Azkaban is the third book in the Harry Potter series by J.K. Rowling, following Harry's adventures at Hogwarts and the escape of a dangerous prisoner."
+  },
+  {
+    "book_image": "book34.jpg",
+    "book_name": "A Song of Ice and Fire: A Game of Thrones",
+    "author_name": "George R.R. Martin",
+    "category": "Fantasy",
+    "price": "16.99",
+    "description": "A Game of Thrones is the first book in the A Song of Ice and Fire series by George R.R. Martin, known for its epic fantasy world and political intrigue."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.EKHxBNWgl3JKdnyy6fI80QHaJQ?w=208&h=260&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
+    "author_name": "Mark Manson",
+    "category": "Self-Help",
+    "price": "9.99",
+    "description": "The Subtle Art of Not Giving a F*ck by Mark Manson offers a candid and unconventional guide to living a meaningful life by embracing discomfort and choosing what truly matters."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.k4dtLXTVXhjwyRc2mAwWtQHaKy?w=207&h=301&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Hobbit",
+    "author_name": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": "15.99",
+    "description": "The Hobbit is a fantasy novel by J.R.R. Tolkien that follows the adventures of Bilbo Baggins as he embarks on a journey with a group of dwarves to reclaim their homeland from a dragon."
+  },
+  {
+    "book_image": "https://www.bing.com/th/id/OIP.cNxgEVUe23VNCTSZaSVgKAHaKp?w=136&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Kite Runner",
+    "author_name": "Khaled Hosseini",
+    "category": "Contemporary Fiction",
+    "price": "12.49",
+    "description": "The Kite Runner is a contemporary novel by Khaled Hosseini that explores the complex relationship between two childhood friends in Afghanistan."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.d8T12Vt79dzFYV02PaR1lgHaLH?w=204&h=306&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Hitchhiker's Guide to the Galaxy",
+    "author_name": "Douglas Adams",
+    "category": "Science Fiction",
+    "price": "10.99",
+    "description": "The Hitchhiker's Guide to the Galaxy is a science fiction comedy series by Douglas Adams that follows the misadventures of Arthur Dent after Earth's destruction."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.bADjWwLtxW0p3BDVYa9E_AHaKC?w=117&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Girl with the Dragon Tattoo",
+    "author_name": "Stieg Larsson",
+    "category": "Mystery",
+    "price": "12.49",
+    "description": "The Girl with the Dragon Tattoo is a mystery novel by Stieg Larsson that follows journalist Mikael Blomkvist and hacker Lisbeth Salander as they investigate a decades-old disappearance."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.C8Wgq5F-zSEjVXJnyds03gHaLf?w=200&h=311&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road Less Traveled: A New Psychology of Love, Traditional Values, and Spiritual Growth",
+    "author_name": "M. Scott Peck",
+    "category": "Psychology",
+    "price": "12.99",
+    "description": "The Road Less Traveled by M. Scott Peck explores the importance of discipline, love, and spirituality in achieving personal growth and fulfillment."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.-yyIKAgm2zFOL5BmBem-HwHaFk?w=238&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Fellowship of the Ring",
+    "author_name": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": "13.99",
+    "description": "The Fellowship of the Ring is the first book in J.R.R. Tolkien's epic fantasy trilogy, The Lord of the Rings, following the journey to destroy the One Ring."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.IPXINf2CcYViEbVx_JRJVAAAAA?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Road",
+    "author_name": "Cormac McCarthy",
+    "category": "Post-Apocalyptic",
+    "price": "12.99",
+    "description": "The Road is a post-apocalyptic novel by Cormac McCarthy that follows a father and son as they journey through a desolate landscape in search of safety and survival."
+  },
+  {
+    "book_image": "https://th.bing.com/th/id/OIP.Bot9b5KthqRuI80alqWmBgHaLb?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "book_name": "The Handmaid's Tale",
+    "author_name": "Margaret Atwood",
+    "category": "Dystopian Fiction",
+    "price": "11.49",
+    "description": "The Handmaid's Tale is a dystopian novel by Margaret Atwood that explores a theocratic regime where women are subjected to oppression and control."
+  }
+]
