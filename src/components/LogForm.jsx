@@ -50,7 +50,7 @@ const LogForm = () => {
         width="90"
         height="90"
       />
-      <h4 className="h4 mb-3 fw-normal text-center">Please sign in</h4>
+      <h4 className="h4 mb-3 fw-normal text-center">Please Login in</h4>
       <form onSubmit={handelSubmit}>
         <div className="form-floating mt-4">
           <input
