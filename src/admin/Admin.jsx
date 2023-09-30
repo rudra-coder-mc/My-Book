@@ -41,7 +41,6 @@ const Admin = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // book_image: bookDetail.book_image,
         book_image: bookDetail.book_image,
         book_name: bookDetail.book_name,
         author_name: bookDetail.author_name,
@@ -51,7 +50,6 @@ const Admin = () => {
       }),
     });
     const json = await response.json();
-    // console.log(json);
 
     if (!json.NewBook) {
       alert("enter valid detail");
@@ -85,7 +83,6 @@ const Admin = () => {
       }),
     });
     const json = await response.json();
-    // console.log(json);
 
     if (!json.UpdateBook) {
       alert("enter valid detail");
@@ -110,12 +107,10 @@ const Admin = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // book_image: bookDetail.book_image,
         book_name: bookDetail.book_name,
       }),
     });
     const json = await response.json();
-    // console.log(json);
 
     if (!json.DeleteBook) {
       alert("enter valid detail");
@@ -177,16 +172,6 @@ const Admin = () => {
             <label htmlFor="author_name">author_name</label>
           </div>
           <div className="form-floating mt-4">
-            {/* <input
-              type="text"
-              className="form-control"
-              id="categoty"
-              placeholder="John doe"
-              name="category"
-              value={bookDetail.category}
-              onChange={chang}
-            />
-            <label htmlFor="categoty">category</label> */}
             {bookCat !== [] ? (
               <>
                 <select

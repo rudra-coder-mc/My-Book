@@ -17,13 +17,12 @@ const Home = () => {
       },
     });
     response = await response.json();
-    console.log(response[0]);
+
     setBookItem(response[0]);
     setBookCat(response[1]);
   };
   useEffect(() => {
     loadData();
-    console.log("data");
   }, []);
 
   const hendelCatagory = (e) => {

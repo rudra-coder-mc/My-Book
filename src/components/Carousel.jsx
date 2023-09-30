@@ -6,8 +6,6 @@ const img5 = require("../image/A-library-image (3).png");
 const img6 = require("../image/A-library-image (4).png");
 const img7 = require("../image/A-library-image (5).png");
 const img8 = require("../image/A-library-image.png");
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
 
 const Carousel = () => {
   return (

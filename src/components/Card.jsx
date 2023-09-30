@@ -20,8 +20,6 @@ const Card = (props) => {
           break;
         }
       }
-      // console.log(book);
-      // console.log(new Date());
 
       if (book !== []) {
         if (book.Quantity === orderCount) {
@@ -58,8 +56,6 @@ const Card = (props) => {
         Quantity: orderCount,
         category: bookItem.category,
       });
-      // console.log(data);
-      // setOrderCount(1);
     }
   };
 

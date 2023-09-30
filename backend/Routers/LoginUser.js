@@ -27,12 +27,12 @@ router.post("/login", userVal, async (req, res) => {
   try {
     let usereData = await user.findOne({ email });
     if (!usereData) {
-      return res.status(400).json({ errors: "try login with correct data" });
+      return res.json({ errors: "Enter correct email" });
     }
     const ComparePassword = await bcrypt.compare(password, usereData.password);
 
     if (!ComparePassword) {
-      return res.status(400).json({ errors: "try login with correct data" });
+      return res.json({ errors: "Enter correct password" });
     }
     const data = {
       user: {
@@ -41,11 +41,15 @@ router.post("/login", userVal, async (req, res) => {
     };
     const authToken = jwt.sign(data, secreat);
 
-    return res.json({ success: true, authToken });
+    return res.json({
+      success: true,
+      authToken,
+      errors: "Enter correct password or email",
+    });
   } catch (error) {
     res
       .status(500)
-      .json({ success: false, error: "try login with correct data" });
+      .json({ success: false, errors: "sum problem with login form" });
   }
 });
 

@@ -33,6 +33,7 @@ router.post("/signup", userVal, async (req, res) => {
     });
     res.json({ success: true });
   } catch (error) {
+    
     res.status(500).json({ success: false, error: error.message });
   }
 });

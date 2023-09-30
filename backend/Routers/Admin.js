@@ -1,12 +1,10 @@
 const express = require("express");
-const mongoose = require("mongoose");
+
 const router = express.Router();
 const Books = require("../models/book");
-const Category = require("../models/category");
 
 router.post("/AddBook", async (req, res) => {
   try {
-    // Books.insertMany();
     const newBook = new Books({
       book_image: req.body.book_image,
       book_name: req.body.book_name,

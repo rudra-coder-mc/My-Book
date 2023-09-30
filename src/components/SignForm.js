@@ -23,10 +23,9 @@ const SignForm = () => {
       }),
     });
     const json = await response.json();
-    // console.log(json);
 
     if (!json.success) {
-      alert("enter valid detail");
+      alert(json.errors);
     }
 
     if (json.success) {

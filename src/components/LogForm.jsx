@@ -7,6 +7,7 @@ const LogForm = () => {
     email: "",
     password: "",
   });
+
   const handelSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,20 +22,18 @@ const LogForm = () => {
       }),
     });
     const json = await response.json();
-    // console.log(json);
 
     if (!json.success) {
-      alert("enter valid detail");
+      console.log(json.errors);
     }
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
       localStorage.setItem("userEmail", userDetail.email);
-      // console.log(localStorage.getItem("authToken"));
+
       navigate("/");
     }
     if (userDetail.email === "admin111@gmail.com") {
       localStorage.setItem("admin", true);
-      // console.log(localStorage.getItem("admin"));
     }
   };
   const chang = (event) => {
@@ -80,11 +79,11 @@ const LogForm = () => {
         <button className=" btn btn-success " type="submit">
           login
         </button>
-        {/* <button className="w-40 btn  btn-primary"> */}
+
         <Link to="/SignUp" className=" btn  btn-danger ms-3">
           sign in
         </Link>
-        {/* </button> */}
+
         <p className="m-5  text-muted">© 2023</p>
       </form>
       <Outlet />
