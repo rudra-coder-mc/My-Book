@@ -2,7 +2,8 @@ import logo from "../image/logo1.png";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 const SignForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const [error, setError] = useState([]);
   const [userDetail, setuserDetail] = useState({
     name: "",
     email: "",
@@ -22,17 +23,16 @@ const SignForm = () => {
         password: userDetail.password,
       }),
     });
-    const json = await response.json();
-
-    if (!json.success) {
-      alert(json.errors);
+    const status = await response.json();
+    if (!status.success) {
+      setError(status.errors);
     }
-
-    if (json.success) {
+    if (status.success) {
       navigate("/login");
     }
   };
-  const chang = (event) => {
+  console.log(error);
+  const handleChange = (event) => {
     setuserDetail({ ...userDetail, [event.target.name]: event.target.value });
   };
   return (
@@ -54,9 +54,16 @@ const SignForm = () => {
             placeholder="John doe"
             name="name"
             value={userDetail.name}
-            onChange={chang}
+            onChange={handleChange}
           />
           <label htmlFor="NameInput">Name</label>
+          {error.filter((er) => er.param === "name").length !== 0 && (
+            <span className="text-danger">
+              {error
+                .filter((er) => er.param === "name")
+                .map((erName) => erName.msg)}
+            </span>
+          )}
         </div>
         <div className="form-floating mt-4">
           <input
@@ -66,9 +73,16 @@ const SignForm = () => {
             placeholder="name@example.com"
             name="email"
             value={userDetail.email}
-            onChange={chang}
+            onChange={handleChange}
           />
           <label htmlFor="floatingInput">Email address</label>
+          {error.filter((er) => er.param === "email").length !== 0 && (
+            <span className="text-danger">
+              {error
+                .filter((er) => er.param === "email")
+                .map((erName) => erName.msg)}
+            </span>
+          )}
         </div>
         <div className="form-floating my-4">
           <input
@@ -78,19 +92,24 @@ const SignForm = () => {
             placeholder="Password"
             name="password"
             value={userDetail.password}
-            onChange={chang}
+            onChange={handleChange}
           />
           <label htmlFor="floatingPassword">Password</label>
+          {error.filter((er) => er.param === "password").length !== 0 && (
+            <span className="text-danger">
+              {error
+                .filter((er) => er.param === "password")
+                .map((erName) => erName.msg)}
+            </span>
+          )}
         </div>
 
         <button className=" btn btn-success " type="submit">
           Sign in
         </button>
-        {/* <button className="w-40 btn  btn-primary"> */}
-        <Link to="/Login" className=" btn  btn-danger ms-3">
-          Login
-        </Link>
-        {/* </button> */}
+        <p className="mt-3">
+          Already have an account? <Link to="/Login">Login</Link>
+        </p>
         <p className="m-5  text-muted">© 2023</p>
       </form>
       <Outlet />

@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 const LogForm = () => {
   let navigate = useNavigate();
+  const [error, setError] = useState([]);
   const [userDetail, setuserDetail] = useState({
     email: "",
     password: "",
   });
-
   const handelSubmit = async (e) => {
     e.preventDefault();
 
@@ -24,22 +24,22 @@ const LogForm = () => {
     const json = await response.json();
 
     if (!json.success) {
-      console.log(json.errors);
+      setError(json.errors);
     }
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
       localStorage.setItem("userEmail", userDetail.email);
-
       navigate("/");
     }
     if (userDetail.email === "admin111@gmail.com") {
       localStorage.setItem("admin", true);
+      // console.log(localStorage.getItem("admin"));
     }
   };
   const chang = (event) => {
     setuserDetail({ ...userDetail, [event.target.name]: event.target.value });
   };
-
+  console.log(error);
   return (
     <div className="container  w-50">
       <img
@@ -62,6 +62,17 @@ const LogForm = () => {
             onChange={chang}
           />
           <label htmlFor="floatingInput">Email address</label>
+          {Array.isArray(error) ? (
+            error.filter((er) => er.param === "email").length !== 0 && (
+              <span className="text-danger">
+                {error
+                  .filter((er) => er.param === "email")
+                  .map((erName) => erName.msg)}
+              </span>
+            )
+          ) : (
+            <span className="text-danger">{error}</span>
+          )}
         </div>
         <div className="form-floating my-4">
           <input
@@ -74,16 +85,28 @@ const LogForm = () => {
             onChange={chang}
           />
           <label htmlFor="floatingPassword">Password</label>
+          {Array.isArray(error) ? (
+            error.filter((er) => er.param === "password").length !== 0 && (
+              <span className="text-danger">
+                {error
+                  .filter((er) => er.param === "password")
+                  .map((erName) => erName.msg)}
+              </span>
+            )
+          ) : (
+            <span className="text-danger">{error}</span>
+          )}
         </div>
 
         <button className=" btn btn-success " type="submit">
           login
         </button>
-
-        <Link to="/SignUp" className=" btn  btn-danger ms-3">
-          sign in
-        </Link>
-
+        <p className="mt-3">
+          Don't have an account?{" "}
+          <Link to="/SignUp" className="">
+            sign in
+          </Link>{" "}
+        </p>
         <p className="m-5  text-muted">© 2023</p>
       </form>
       <Outlet />
