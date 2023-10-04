@@ -47,24 +47,21 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              {localStorage.getItem("admin") ? (
+              {localStorage.getItem("admin") && (
                 <li className="nav-item">
                   <Link className="nav-link" to="/Admin">
                     Admin
                   </Link>
                 </li>
-              ) : (
-                ""
               )}
-              {localStorage.getItem("authToken") ? (
-                <li className="nav-item">
-                  <Link className="nav-link" to="/MyOrder">
-                    My Order
-                  </Link>
-                </li>
-              ) : (
-                " "
-              )}
+              {localStorage.getItem("authToken") &&
+                !localStorage.getItem("admin") && (
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/MyOrder">
+                      My Order
+                    </Link>
+                  </li>
+                )}
 
               <li className="nav-item">
                 <Link className="nav-link" to="/About">
@@ -84,25 +81,29 @@ const Navbar = () => {
               </>
             ) : (
               <div className="d-flex align-items-center">
-                <Link
-                  className="text-reset me-3"
-                  to="/"
-                  onClick={() => setCartView(true)}
-                >
-                  <i className="fas fa-shopping-cart">
-                    {" "}
-                    <span className="badge rounded-pill badge-notification text-danger">
-                      {data.length}
-                    </span>
-                  </i>
-                </Link>
-                {cartView ? (
-                  <Modal onClose={() => setCartView(false)}>
-                    <Cart />
-                  </Modal>
-                ) : (
-                  ""
+                {/* !localStorage.getItem("admin") */}
+                {!localStorage.getItem("admin") && (
+                  <>
+                    <Link
+                      className="text-reset me-3"
+                      to="/"
+                      onClick={() => setCartView(true)}
+                    >
+                      <i className="fas fa-shopping-cart">
+                        {" "}
+                        <span className="badge rounded-pill badge-notification text-danger">
+                          {data.length}
+                        </span>
+                      </i>
+                    </Link>
+                    {cartView && (
+                      <Modal onClose={() => setCartView(false)}>
+                        <Cart />
+                      </Modal>
+                    )}
+                  </>
                 )}
+
                 <Link
                   className="btn btn-white  mx-1"
                   to="/"

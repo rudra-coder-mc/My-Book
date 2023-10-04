@@ -172,7 +172,7 @@ const Admin = () => {
             <label htmlFor="author_name">author_name</label>
           </div>
           <div className="form-floating mt-4">
-            {bookCat !== [] ? (
+            {bookCat ? (
               <>
                 <select
                   name="catSelecter"
