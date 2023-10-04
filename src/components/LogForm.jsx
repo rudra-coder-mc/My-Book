@@ -31,15 +31,15 @@ const LogForm = () => {
       localStorage.setItem("userEmail", userDetail.email);
       navigate("/");
     }
-    if (userDetail.email === "admin111@gmail.com") {
+
+    if (json.admin) {
       localStorage.setItem("admin", true);
-      // console.log(localStorage.getItem("admin"));
     }
   };
   const chang = (event) => {
     setuserDetail({ ...userDetail, [event.target.name]: event.target.value });
   };
-  console.log(error);
+
   return (
     <div className="container  w-50">
       <img

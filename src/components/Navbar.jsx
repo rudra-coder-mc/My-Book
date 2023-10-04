@@ -11,6 +11,7 @@ const Navbar = () => {
   const handelLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("admin");
+    localStorage.removeItem("userEmail");
     navigate("/Login");
   };
   return (

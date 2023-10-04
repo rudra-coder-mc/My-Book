@@ -33,7 +33,19 @@ router.post("/login", userVal, async (req, res) => {
 
     if (!ComparePassword) {
       return res.json({ errors: " Enter correct password" });
+    } else {
+      const data = {
+        user: {
+          id: usereData.id,
+        },
+      };
+      const authToken = jwt.sign(data, secreat);
+
+      if (email === "admin111@gmail.com") {
+        return res.json({ admin: true, authToken, success: true });
+      }
     }
+
     const data = {
       user: {
         id: usereData.id,
