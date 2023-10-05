@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
-const Admin = () => {
-  const [bookDetail, setBookDetail] = useState({
-    book_image: "",
-    book_name: "",
-    author_name: "",
-    category: "",
-    price: "",
-    description: "",
-  });
+const Admin = ({ updat }) => {
+  let navigate = useNavigate();
+  const [bookDetail, setBookDetail] = useState(
+    updat
+      ? {
+          book_image: updat.data.book_image,
+          book_name: updat.data.book_name,
+          author_name: updat.data.author_name,
+          category: updat.data.category,
+          price: updat.data.price,
+          description: updat.data.description,
+        }
+      : {
+          book_image: "",
+          book_name: "",
+          author_name: "",
+          category: "",
+          price: "",
+          description: "",
+        }
+  );
   const [bookCat, setBookCat] = useState([]);
   const [selectedCat, setSelectedCat] = useState("");
 
@@ -96,36 +109,10 @@ const Admin = () => {
         price: "",
         description: "",
       });
+      navigate("/Admin");
     }
   };
-  const hendelDelete = async (e) => {
-    e.preventDefault();
-
-    const response = await fetch("http://localhost:5000/api/DeleteBook", {
-      method: "Post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        book_name: bookDetail.book_name,
-      }),
-    });
-    const json = await response.json();
-
-    if (!json.DeleteBook) {
-      alert("enter valid detail");
-    }
-    if (json.DeleteBook) {
-      setBookDetail({
-        book_image: "",
-        book_name: "",
-        author_name: "",
-        category: "",
-        price: "",
-        description: "",
-      });
-    }
-  };
+  console.log(bookDetail);
   const chang = (event) => {
     setBookDetail({ ...bookDetail, [event.target.name]: event.target.value });
   };
@@ -145,7 +132,7 @@ const Admin = () => {
               value={bookDetail.book_image}
               onChange={chang}
             />
-            <label htmlFor="book_image">book_image</label>
+            <label htmlFor="book_image">image link</label>
           </div>
           <div className="form-floating mt-4">
             <input
@@ -179,6 +166,7 @@ const Admin = () => {
                   id="select1"
                   className="form-control"
                   onChange={hendelCat}
+                  value={bookDetail.category}
                 >
                   {bookCat.map((data) => (
                     <option
@@ -226,9 +214,6 @@ const Admin = () => {
             </button>
             <button className="btn btn-success mx-3" onClick={hendelUpdate}>
               Update BOOk
-            </button>
-            <button className="btn btn-success" onClick={hendelDelete}>
-              Delete BOOk
             </button>
           </div>
         </form>

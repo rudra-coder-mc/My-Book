@@ -20,10 +20,13 @@ router.post("/AddBook", async (req, res) => {
   }
 });
 router.post("/DeleteBook", async (req, res) => {
-  let deleteBook = req.body.book_name;
+  let deleteBookId = req.body.id;
   try {
-    await Books.deleteMany({ book_name: deleteBook }).then(() => {
+    await Books.findByIdAndDelete({ _id: deleteBookId }).then(async () => {
       res.json({ DeleteBook: true });
+      await Books.find({}).then((book) => {
+        global.book = book;
+      });
     });
   } catch (error) {
     res.status(500).json({ DeleteBook: false, error: error.message });
@@ -44,10 +47,25 @@ router.post("/UpdateBook", async (req, res) => {
           description: req.body.description,
         },
       }
-    );
+    ).then(async () => {
+      await Books.find({}).then((book) => {
+        global.book = book;
+      });
+    });
     res.json({ UpdateBook: true });
   } catch (error) {
     res.status(500).json({ UpdateBook: false, error: error.message });
+  }
+});
+
+router.post("/UpdateData", async (req, res) => {
+  let _id = req.body.id;
+  try {
+    let data = await Books.findById({ _id });
+
+    res.json({ data });
+  } catch (error) {
+    res.status(500).json({ UpdateDATA: false, error: error.message });
   }
 });
 

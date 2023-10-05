@@ -21,7 +21,7 @@ const Card = (props) => {
         }
       }
 
-      if (book ) {
+      if (book) {
         if (book.Quantity === orderCount) {
           await dispatch({
             type: "UPDATE",
@@ -91,31 +91,48 @@ const Card = (props) => {
           <h6 className="font-weight-bold">price: {totalPrice}</h6>
           <p className="card-text text-description">{bookItem.description}</p>
           <input type="checkbox" className="exp-btn" />
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="btn-group">
+          {localStorage.getItem("admin") ? (
+            <div className="d-flex justify-content-between align-items-center">
               <button
-                type="button"
-                className="btn btn-md btn-outline-secondary "
-                onClick={handleClick}
-                name="+"
+                className="btn btn-primary"
+                onClick={() => props.handleUpdate(bookItem._id)}
               >
-                +
+                Edite
               </button>
               <button
-                type="button"
-                className="btn btn-md btn-outline-secondary"
-                value="-"
-                onClick={handleClick}
-                name="-"
+                className="btn btn-primary "
+                onClick={() => props.handelDelete(bookItem._id)}
               >
-                -
+                Delete
               </button>
             </div>
-            <small className="font-weight-bold">{orderCount}</small>
-            <button className="btn btn-primary " onClick={handelOrder}>
-              Order
-            </button>
-          </div>
+          ) : (
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="btn-group">
+                <button
+                  type="button"
+                  className="btn btn-md btn-outline-secondary "
+                  onClick={handleClick}
+                  name="+"
+                >
+                  +
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-md btn-outline-secondary"
+                  value="-"
+                  onClick={handleClick}
+                  name="-"
+                >
+                  -
+                </button>
+              </div>
+              <small className="font-weight-bold">{orderCount}</small>
+              <button className="btn btn-primary " onClick={handelOrder}>
+                Order
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
