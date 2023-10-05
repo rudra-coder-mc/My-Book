@@ -80,17 +80,14 @@ const SignForm = () => {
             onChange={handleChange}
           />
           <label htmlFor="floatingInput">Email address</label>
-          {Array.isArray(error) ? (
+          {Array.isArray(error) &&
             error.filter((er) => er.param === "email").length !== 0 && (
               <span className="text-danger">
                 {error
                   .filter((er) => er.param === "email")
                   .map((erName) => erName.msg)}
               </span>
-            )
-          ) : (
-            <span className="text-danger">{error}</span>
-          )}
+            )}
         </div>
         <div className="form-floating my-4">
           <input

@@ -35,7 +35,10 @@ router.post("/signup", userVal, async (req, res) => {
         password: secPass,
       });
     } else {
-      return res.json({ errors: "User already exist. Use another email" });
+      let emailerror = [
+        { param: "email", msg: "User already exist. Use another email" },
+      ];
+      return res.json({ errors: emailerror });
     }
 
     res.json({ success: true });
@@ -43,9 +46,5 @@ router.post("/signup", userVal, async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 });
-
-// router.get("/signup", async (req, res) => {
-
-// });
 
 module.exports = router;

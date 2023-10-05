@@ -39,7 +39,7 @@ const LogForm = () => {
   const chang = (event) => {
     setuserDetail({ ...userDetail, [event.target.name]: event.target.value });
   };
-
+  console.log(error);
   return (
     <div className="container  w-50">
       <img
@@ -62,17 +62,14 @@ const LogForm = () => {
             onChange={chang}
           />
           <label htmlFor="floatingInput">Email address</label>
-          {Array.isArray(error) ? (
+          {Array.isArray(error) &&
             error.filter((er) => er.param === "email").length !== 0 && (
               <span className="text-danger">
                 {error
                   .filter((er) => er.param === "email")
                   .map((erName) => erName.msg)}
               </span>
-            )
-          ) : (
-            <span className="text-danger">{error}</span>
-          )}
+            )}
         </div>
         <div className="form-floating my-4">
           <input
@@ -85,17 +82,14 @@ const LogForm = () => {
             onChange={chang}
           />
           <label htmlFor="floatingPassword">Password</label>
-          {Array.isArray(error) ? (
+          {Array.isArray(error) &&
             error.filter((er) => er.param === "password").length !== 0 && (
               <span className="text-danger">
                 {error
                   .filter((er) => er.param === "password")
                   .map((erName) => erName.msg)}
               </span>
-            )
-          ) : (
-            <span className="text-danger">{error}</span>
-          )}
+            )}
         </div>
 
         <button className=" btn btn-success " type="submit">

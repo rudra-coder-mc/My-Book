@@ -27,12 +27,16 @@ router.post("/login", userVal, async (req, res) => {
   try {
     let usereData = await user.findOne({ email });
     if (!usereData) {
-      return res.json({ errors: " Enter correct email" });
+      let emailerror = [{ param: "email", msg: "Enter correct email !" }];
+      return res.json({ errors: emailerror });
     }
     const ComparePassword = await bcrypt.compare(password, usereData.password);
 
     if (!ComparePassword) {
-      return res.json({ errors: " Enter correct password" });
+      let passworderror = [
+        { param: "password", msg: "Enter correct password !" },
+      ];
+      return res.json({ errors: passworderror });
     } else {
       const data = {
         user: {
