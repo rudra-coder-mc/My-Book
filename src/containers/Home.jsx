@@ -35,7 +35,7 @@ const Home = () => {
       <Carousele />
 
       <div className="container">
-        {bookCat !== [] ? (
+        {bookCat ? (
           <div className="d-flex ">
             <select
               name="catSelecter"
@@ -74,7 +74,7 @@ const Home = () => {
         <h4>{catFilter}</h4>
         <hr />
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-4 ">
-          {bookItem !== []
+          {bookItem
             ? catFilter === "all"
               ? bookItem
                   .filter((item) =>

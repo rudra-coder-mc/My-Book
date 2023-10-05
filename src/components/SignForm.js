@@ -57,12 +57,16 @@ const SignForm = () => {
             onChange={handleChange}
           />
           <label htmlFor="NameInput">Name</label>
-          {error.filter((er) => er.param === "name").length !== 0 && (
-            <span className="text-danger">
-              {error
-                .filter((er) => er.param === "name")
-                .map((erName) => erName.msg)}
-            </span>
+          {Array.isArray(error) ? (
+            error.filter((er) => er.param === "name").length !== 0 && (
+              <span className="text-danger">
+                {error
+                  .filter((er) => er.param === "name")
+                  .map((erName) => erName.msg)}
+              </span>
+            )
+          ) : (
+            <span className="text-danger">{error}</span>
           )}
         </div>
         <div className="form-floating mt-4">
@@ -76,12 +80,16 @@ const SignForm = () => {
             onChange={handleChange}
           />
           <label htmlFor="floatingInput">Email address</label>
-          {error.filter((er) => er.param === "email").length !== 0 && (
-            <span className="text-danger">
-              {error
-                .filter((er) => er.param === "email")
-                .map((erName) => erName.msg)}
-            </span>
+          {Array.isArray(error) ? (
+            error.filter((er) => er.param === "email").length !== 0 && (
+              <span className="text-danger">
+                {error
+                  .filter((er) => er.param === "email")
+                  .map((erName) => erName.msg)}
+              </span>
+            )
+          ) : (
+            <span className="text-danger">{error}</span>
           )}
         </div>
         <div className="form-floating my-4">
@@ -95,12 +103,16 @@ const SignForm = () => {
             onChange={handleChange}
           />
           <label htmlFor="floatingPassword">Password</label>
-          {error.filter((er) => er.param === "password").length !== 0 && (
-            <span className="text-danger">
-              {error
-                .filter((er) => er.param === "password")
-                .map((erName) => erName.msg)}
-            </span>
+          {Array.isArray(error) ? (
+            error.filter((er) => er.param === "password").length !== 0 && (
+              <span className="text-danger">
+                {error
+                  .filter((er) => er.param === "password")
+                  .map((erName) => erName.msg)}
+              </span>
+            )
+          ) : (
+            <span className="text-danger">{error}</span>
           )}
         </div>
 

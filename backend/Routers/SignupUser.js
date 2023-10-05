@@ -25,17 +25,27 @@ router.post("/signup", userVal, async (req, res) => {
   }
   const solt = await bcrypt.genSalt(10);
   let secPass = await bcrypt.hash(req.body.password, solt);
+  let email = req.body.email;
   try {
-    await user.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: secPass,
-    });
+    let usereData = await user.findOne({ email });
+    if (!usereData) {
+      await user.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: secPass,
+      });
+    } else {
+      return res.json({ errors: "User already exist. Use another email" });
+    }
+
     res.json({ success: true });
   } catch (error) {
-    
     res.status(500).json({ success: false, error: error.message });
   }
 });
+
+// router.get("/signup", async (req, res) => {
+
+// });
 
 module.exports = router;

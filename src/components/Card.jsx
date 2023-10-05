@@ -21,7 +21,7 @@ const Card = (props) => {
         }
       }
 
-      if (book !== []) {
+      if (book ) {
         if (book.Quantity === orderCount) {
           await dispatch({
             type: "UPDATE",
